@@ -16,8 +16,8 @@ public class HomeController {
 	@GetMapping("/index")
 	public ModelAndView index() {
 		ModelAndView modelAndView = new ModelAndView(ViewRouteHelper.INDEX);
-		//User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		//modelAndView.addObject("username", user.getUsername());
+		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		modelAndView.addObject("username", user.getUsername());
 		return modelAndView;
 	}
 
